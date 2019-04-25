@@ -1,0 +1,110 @@
+# The following lines of boilerplate have to be in your project's
+# CMakeLists in this exact order for cmake to work correctly
+cmake_minimum_required(VERSION 3.5)
+
+SET(DEVICE_SRC
+        source/device/definition/bridge/BridgeIID.h
+        source/device/definition/bridge/Bridge.h
+        source/device/definition/bridge/Bridge.c
+        source/device/definition/bridge/Bridge_1_AccessoryInformation.c
+        source/device/definition/bridge/Bridge_1_AccessoryInformation.h
+        source/device/definition/bridge/Bridge_2_Identify.c
+        source/device/definition/bridge/Bridge_2_Identify.h
+        source/device/definition/bridge/Bridge_3_Manufacturer.c
+        source/device/definition/bridge/Bridge_3_Manufacturer.h
+        source/device/definition/bridge/Bridge_4_Model.c
+        source/device/definition/bridge/Bridge_4_Model.h
+        source/device/definition/bridge/Bridge_5_Name.c
+        source/device/definition/bridge/Bridge_5_Name.h
+        source/device/definition/bridge/Bridge_6_SerialNumber.c
+        source/device/definition/bridge/Bridge_6_SerialNumber.h
+        source/device/definition/bridge/Bridge_7_FirmwareRevision.c
+        source/device/definition/bridge/Bridge_7_FirmwareRevision.h
+        source/device/definition/bridge/Bridge_8_HapProtocolInformation.c
+        source/device/definition/bridge/Bridge_8_HapProtocolInformation.h
+        source/device/definition/bridge/Bridge_9_Version.c
+        source/device/definition/bridge/Bridge_9_Version.h
+        source/device/definition/airconditioner/AirConditioner_IID.h
+        source/device/definition/airconditioner/AirConditioner.h
+        source/device/definition/airconditioner/AirConditioner.c
+        source/device/definition/airconditioner/AirConditioner_1_AccessoryInformation.h
+        source/device/definition/airconditioner/AirConditioner_1_AccessoryInformation.c
+        source/device/definition/airconditioner/AirConditioner_2_Identify.h
+        source/device/definition/airconditioner/AirConditioner_2_Identify.c
+        source/device/definition/airconditioner/AirConditioner_3_Manufacturer.h
+        source/device/definition/airconditioner/AirConditioner_3_Manufacturer.c
+        source/device/definition/airconditioner/AirConditioner_4_Model.h
+        source/device/definition/airconditioner/AirConditioner_4_Model.c
+        source/device/definition/airconditioner/AirConditioner_5_Name.h
+        source/device/definition/airconditioner/AirConditioner_5_Name.c
+        source/device/definition/airconditioner/AirConditioner_6_SerialNumber.h
+        source/device/definition/airconditioner/AirConditioner_6_SerialNumber.c
+        source/device/definition/airconditioner/AirConditioner_7_FirmwareRevision.h
+        source/device/definition/airconditioner/AirConditioner_7_FirmwareRevision.c
+        source/device/definition/airconditioner/AirConditioner_8_Thermostat.h
+        source/device/definition/airconditioner/AirConditioner_8_Thermostat.c
+        source/device/definition/airconditioner/AirConditioner_9_Name.h
+        source/device/definition/airconditioner/AirConditioner_9_Name.c
+        source/device/definition/airconditioner/AirConditioner_10_CurrentHeatingCoolingState.h
+        source/device/definition/airconditioner/AirConditioner_10_CurrentHeatingCoolingState.c
+        source/device/definition/airconditioner/AirConditioner_11_TargetHeatingCoolingState.h
+        source/device/definition/airconditioner/AirConditioner_11_TargetHeatingCoolingState.c
+        source/device/definition/airconditioner/AirConditioner_12_CurrentTemperature.h
+        source/device/definition/airconditioner/AirConditioner_12_CurrentTemperature.c
+        source/device/definition/airconditioner/AirConditioner_13_TargetTemperature.h
+        source/device/definition/airconditioner/AirConditioner_13_TargetTemperature.c
+        source/device/definition/airconditioner/AirConditioner_14_TemperatureDisplayUnits.h
+        source/device/definition/airconditioner/AirConditioner_14_TemperatureDisplayUnits.c
+        source/device/handler/OnPropertyGet.h
+        source/device/handler/OnPropertyGet.c
+        source/device/handler/OnPropertySet.h
+        source/device/handler/OnPropertySet.c
+        source/device/handler/bridge/Bridge_doPropertyGet.h
+        source/device/handler/bridge/Bridge_doPropertyGet.c
+        source/device/handler/bridge/Bridge_doPropertySet.h
+        source/device/handler/bridge/Bridge_doPropertySet.c
+        source/device/handler/bridge/1/Bridge_1_AccessoryInformation_doGet.h
+        source/device/handler/bridge/1/Bridge_1_AccessoryInformation_doGet.c
+        source/device/handler/bridge/1/Bridge_1_AccessoryInformation_doSet.h
+        source/device/handler/bridge/1/Bridge_1_AccessoryInformation_doSet.c
+        source/device/handler/bridge/8/Bridge_8_HapProtocolInformation_doGet.h
+        source/device/handler/bridge/8/Bridge_8_HapProtocolInformation_doGet.c
+        source/device/handler/bridge/8/Bridge_8_HapProtocolInformation_doSet.h
+        source/device/handler/bridge/8/Bridge_8_HapProtocolInformation_doSet.c
+        source/device/handler/airconditioner/AirConditioner_doPropertyGet.h
+        source/device/handler/airconditioner/AirConditioner_doPropertyGet.c
+        source/device/handler/airconditioner/AirConditioner_doPropertySet.h
+        source/device/handler/airconditioner/AirConditioner_doPropertySet.c
+        source/device/handler/airconditioner/1/AirConditioner_1_AccessoryInformation_doGet.h
+        source/device/handler/airconditioner/1/AirConditioner_1_AccessoryInformation_doGet.c
+        source/device/handler/airconditioner/1/AirConditioner_1_AccessoryInformation_doSet.h
+        source/device/handler/airconditioner/1/AirConditioner_1_AccessoryInformation_doSet.c
+        source/device/handler/airconditioner/8/AirConditioner_8_Thermostat_doGet.h
+        source/device/handler/airconditioner/8/AirConditioner_8_Thermostat_doGet.c
+        source/device/handler/airconditioner/8/AirConditioner_8_Thermostat_doSet.h
+        source/device/handler/airconditioner/8/AirConditioner_8_Thermostat_doSet.c
+        source/device/handler/airconditioner/8/HeatingCoolingState.h
+        source/device/handler/airconditioner/8/TemperatureDisplayUnits.h
+        source/device/initializer/InitializeConfiguration.h
+        source/device/initializer/InitializeConfiguration.c
+        source/device/print/PrintValue.h
+        source/device/print/PrintValue.c
+        )
+
+set(MAIN_SRCS
+        ${DEVICE_SRC}
+        source/persistence/HapPersistenceImpl.h
+        source/persistence/HapPersistenceImpl.c
+        source/HomeKitStack.h
+        source/HomeKitStack.c
+        source/main.c
+        )
+
+include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+
+ADD_DEFINITIONS(-DLWIP_SOCKET)
+ADD_DEFINITIONS(-DESP32)
+ADD_DEFINITIONS(-DICACHE_FLASH)
+#ADD_DEFINITIONS(-DTINY_DEBUG)
+
+project(homekit-bridge-sample-esp32)
