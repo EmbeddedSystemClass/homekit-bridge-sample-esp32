@@ -36,3 +36,18 @@ make falsh
 ssid: gkct
 pasword: hellogkct
 ```
+
+## 如何修改确实路由器名称和密码
+1. 打开 source/main.c
+2. 修改以下两行
+```
+#define EXAMPLE_ESP_WIFI_SSID      "gkct"
+#define EXAMPLE_ESP_WIFI_PASS      "hellogkct"
+```
+
+## 如何修改配置代码
+1. 打开 source/main.c
+```
+#define SETUP_CODE          "031-45-154"
+```
+

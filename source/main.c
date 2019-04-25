@@ -31,7 +31,7 @@ const int WIFI_CONNECTED_BIT = BIT0;
 static const char *TAG = "simple wifi";
 
 #define DID                 "1C:BE:EE:01:01:08"
-#define NAME                "Lightbulb"
+#define NAME                "demo"
 #define SETUP_CODE          "031-45-154"
 
 static TinyRet addAccessories(Product *product)
