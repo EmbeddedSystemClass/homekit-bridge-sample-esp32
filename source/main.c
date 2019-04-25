@@ -80,6 +80,14 @@ static void runIotStack(void *param)
     }
 
     /**
+     * 1.1 扫描子设备，并添加到Bridge中
+     */
+    if (RET_FAILED(addAccessories(product)))
+    {
+        return;
+    }
+
+    /**
      * 2. 线程1： 启动协议栈，连接到服务器，等待控制指令并执行。
      */
     StartHomeKit(product, &port);
