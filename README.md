@@ -1,7 +1,5 @@
 # HomeKit Bridge sample (Airconditioners) on esp32
 
-本项目源代码由 http://tinyhap.com 生成
-
 ## 配置编译环境
 1. 下载esp-idf:
 ```
