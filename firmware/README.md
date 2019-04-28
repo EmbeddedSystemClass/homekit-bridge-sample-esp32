@@ -17,8 +17,8 @@ esptool.py
    --flash_mode dio
    --flash_size detect
    --flash_freq 40m
-   0x1000 bootloader/bootloader.bin
-   0x8000 partition_table/partition-table.bin
+   0x1000 bootloader.bin
+   0x8000 partition-table.bin
    0x10000 homekit-bridge-sample-esp32.bin
 ```
 
@@ -31,8 +31,8 @@ esptool
     --flash_mode dio
     --flash_size detect
     --flash_freq 40m
-    0x1000 bootloader/bootloader.bin
-    0x8000 partition_table/partition-table.bin
+    0x1000 bootloader.bin
+    0x8000 partition-table.bin
     0x10000 homekit-bridge-sample-esp32.bin
 ```
 
