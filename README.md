@@ -1,13 +1,37 @@
-# HomeKit Bridge sample (Airconditioners) on esp32
+# HomeKit Bridge sample (多个空调) on esp32
 
 ## 配置编译环境
-1. 下载esp-idf:
-```
-https://github.com/espressif/esp-idf.git
-```
+1. 下载esp-idf并切换到3.2分支:
 
-2. esp-idf编译环境的配置,请参考官方文档
-https://docs.espressif.com/projects/esp-idf/en/stable/get-started/
+   ```bash
+   git clone https://github.com/espressif/esp-idf.git /opt/esp-idf
+   git branch v32 -t origin/release/v3.2
+   git checkout v32
+   git pull
+   ```
+2. 下载esp32编译器
+
+* 64位linux
+
+  ```bash
+  wget https://dl.espressif.com/dl/xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz
+  tar -xzf xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz /opt/
+  ```
+
+* 32位linux
+
+  ```bash
+  wget https://dl.espressif.com/dl/xtensa-esp32-elf-linux32-1.22.0-80-g6c4433a-5.2.0.tar.gz
+  tar -xzf xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz /opt/
+  ```
+
+* 如果在其他平台，请参考官方文档
+
+  ```
+  https://docs.espressif.com/projects/esp-idf/en/stable/get-started/
+  ```
+
+  
 
 ## 如何编译？
 ```bash
