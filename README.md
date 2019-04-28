@@ -61,7 +61,7 @@ ssid: gkct
 pasword: hellogkct
 ```
 
-## 如何修改确实路由器名称和密码
+## 如何修改缺省路由器名称和密码
 1. 打开 source/main.c
 2. 修改以下两行
 ```
