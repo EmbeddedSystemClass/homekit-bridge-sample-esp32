@@ -16,8 +16,8 @@
 #include "HomeKitStack.h"
 #include "CaptivePortal.h"
 
-#define EXAMPLE_ESP_WIFI_SSID      "airport-milink"
-#define EXAMPLE_ESP_WIFI_PASS      "milink123"
+#define EXAMPLE_ESP_WIFI_SSID      "gkct"
+#define EXAMPLE_ESP_WIFI_PASS      "helloworld"
 #define EXAMPLE_MAX_STA_CONN       10
 
 /* FreeRTOS event group to signal when we are connected*/
