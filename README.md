@@ -1,14 +1,24 @@
 # HomeKit Bridge sample (多个空调) on esp32
 
 ## 配置编译环境
-1. 下载esp-idf并切换到3.2分支:
+1. 下载esp-idf并切换到3.3分支:
 
    ```bash
    git clone https://github.com/espressif/esp-idf.git /opt/esp-idf
-   git branch v32 -t origin/release/v3.2
-   git checkout v32
+   git branch v33 -t origin/release/v3.3
+   git checkout v33
    git pull
+    ```
+
+   如果当前是其他分支，请切换到3.3分支:
+
+   ```bash
+   git branch v33 -t origin/release/v3.3
+   git checkout v33
+   git submodule update --init --recursive
    ```
+
+
 2. 下载esp32编译器
 
 * 64位linux
